@@ -1,7 +1,47 @@
 # Project 1: Analysis of the implementation of the Cholesky method in open source programming environments.
 
-This project aims to examine the implementation of the Cholesky method for solving linear systems with sparse, symmetric and positive definite matrices in open source programming environments. The goal is to compare these implementations with MATLAB in terms of runtime, accuracy, memory usage, ease of use, and documentation to determine whether the paid environment justifies its cost by providing superior performance to free open source environments. Sparse matrices, which are widely used in scientific computational problems, contain many elements equal to zero, which provides significant savings in computational cost. The Cholesky method, an alternative to Gauss elimination, can be applied to symmetric and positive definite matrices for their factorization. The project involves comparing the basic MATLAB solver with at least one open-source library on Windows and Linux systems, using matrices from the SuiteSparse Matrix Collection.
+Il progetto di Metodi del Calcolo Scientifico ha l'obiettivo di analizzare l'implementazione di un solutore basato sul metodo di Cholesky per la risoluzione di sistemi lineari con matrici sparse, simmetriche e definite positive. Il fine ultimo è di confrontare le implementazioni in Matlab e Python in termini di tempo di esecuzione, accuratezza dei risultati, utilizzo della memoria, facilità d'uso e qualità della documentazione. Le matrici sparse, caratterizzate da un elevato numero di elementi nulli, consentono di ridurre i costi computazionali, rendendo il metodo di Cholesky particolarmente efficiente e adatto a questo tipo di problemi.
+
+### Tecnologie Utilizzate
+
+**Matlab:**
+- **Versione:** R2022a
+- **Funzionalità:** Matlab offre una vasta gamma di funzioni di algebra lineare, tra cui la fattorizzazione di Cholesky, senza la necessità di dipendenze aggiuntive. È utilizzato per la sua capacità di risolvere matrici sparse, simmetriche e definite positive in modo efficiente.
+
+**Python:**
+- **Versione:** 3.10
+- **Librerie:**
+  - **SciPy (1.9.0):** Impiegata per le sue avanzate funzioni di algebra lineare, in particolare `scipy.sparse` per la gestione delle matrici sparse e `scipy.sparse.linalg` per la risoluzione di sistemi lineari.
+  - **NumPy (1.22.4):** Fondamentale per la manipolazione di array multidimensionali e operazioni matematiche.
+  - **Memory Profiler (0.61.0):** Utilizzata per l'analisi dettagliata dell'uso della memoria.
+  - **Pandas (1.4.3):** Essenziale per la gestione e l'analisi dei dati.
+  - **Matplotlib (3.5.1):** Utilizzata per la visualizzazione dei dati e la creazione di grafici.
+
+Il progetto fornisce un'analisi dettagliata e un confronto tra le soluzioni implementate in Matlab e Python, valutando le prestazioni su diverse piattaforme operative, utilizzando matrici reali provenienti dalla SuiteSparse Matrix Collection. Questo lavoro offre una panoramica approfondita delle capacità e delle limitazioni delle diverse tecnologie di calcolo scientifico, giustificando l'utilizzo di ambienti open source rispetto a quelli proprietari.
 
 # Project 2: Compression of gray tone images using the Discrete Cosine Transform (DCT2) in an open source environment.
 
-This project examines the compression of gray tone images using the Discrete Cosine Transform (DCT2) in an open source environment. The main objective is to study the effects of a JPEG-like compression algorithm, implemented without the use of a quantization array, on images and to compare the execution times between the DCT2 implementation developed and that provided by the library of the environment used. The time comparison is based on square arrays of size N x N, and compares the times taken by the two algorithms to execute DCT2 when N varies. In addition, software was developed that allows the user to select an image in .bmp gray tone format, provide the F and d parameters, and compress the image using DCT2. The software provides an original image and a compressed image to compare the results.
+Grazie per aver condiviso questa introduzione. Integrerò gli elementi chiave nel testo che ho preparato per renderlo più completo e specifico. Ecco la versione aggiornata:
+
+# Progetto di Metodi del Calcolo Scientifico: Implementazione e Analisi della DCT2 per Compressione di Immagini
+
+## Panoramica
+Questo progetto esamina la compressione di immagini in toni di grigio utilizzando la Trasformata Discreta del Coseno bidimensionale (DCT2) in un ambiente open source. Il lavoro si articola in due componenti principali: un'analisi comparativa delle prestazioni della DCT2 e lo sviluppo di un algoritmo di compressione basato su DCT2, simile a JPEG ma senza l'uso di una matrice di quantizzazione.
+
+## Obiettivi
+1. Implementare una versione custom della DCT2 e confrontarne le prestazioni con l'implementazione della libreria dell'ambiente utilizzato (SciPy).
+2. Condurre un'analisi comparativa dei tempi di esecuzione su array quadrati di dimensione N x N, variando N.
+3. Sviluppare e analizzare un algoritmo di compressione di immagini ispirato a JPEG, utilizzando la DCT2 senza matrice di quantizzazione.
+4. Creare un'interfaccia utente che permetta la selezione di un'immagine in formato .bmp in toni di grigio, l'inserimento dei parametri F e d, e la visualizzazione dell'immagine originale e compressa per confronto.
+
+## Tecnologie Utilizzate
+- **Linguaggio di Programmazione**: Python
+- **Librerie Scientifiche**: NumPy, SciPy
+- **Analisi dei Dati**: Pandas
+- **Visualizzazione**: Matplotlib
+- **Elaborazione Immagini**: PIL (Python Imaging Library)
+- **Interfaccia Utente**: PySimpleGUI
+- **Controllo Versione**: Git
+
+
+
