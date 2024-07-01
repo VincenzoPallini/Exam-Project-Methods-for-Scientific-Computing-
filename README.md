@@ -21,11 +21,6 @@ Il progetto fornisce un'analisi dettagliata e un confronto tra le soluzioni impl
 
 # Project 2: Compression of gray tone images using the Discrete Cosine Transform (DCT2) in an open source environment.
 
-Grazie per aver condiviso questa introduzione. Integrerò gli elementi chiave nel testo che ho preparato per renderlo più completo e specifico. Ecco la versione aggiornata:
-
-# Progetto di Metodi del Calcolo Scientifico: Implementazione e Analisi della DCT2 per Compressione di Immagini
-
-## Panoramica
 Questo progetto esamina la compressione di immagini in toni di grigio utilizzando la Trasformata Discreta del Coseno bidimensionale (DCT2) in un ambiente open source. Il lavoro si articola in due componenti principali: un'analisi comparativa delle prestazioni della DCT2 e lo sviluppo di un algoritmo di compressione basato su DCT2, simile a JPEG ma senza l'uso di una matrice di quantizzazione.
 
 ## Obiettivi
