@@ -1,4 +1,4 @@
-This repository contains the projects developed for the Scientific Computing Methods exam (Metodi del Calcolo Scientifico) as part of the Master's Degree in Computer Science at the University of Milano-Bicocca (Academic Year 2022-2023). The work consists of two main parts, focusing on the practical application and comparative analysis of numerical methods in different programming environments.
+This projects developed for the Scientific Computing Methods exam (Metodi del Calcolo Scientifico) as part of the Master's Degree in Computer Science at the University of Milano-Bicocca (Academic Year 2022-2023). The work consists of two main parts, focusing on the practical application and comparative analysis of numerical methods in different programming environments.
 
 ### **Project 1: Analysis of Solvers for Sparse Symmetric Positive Definite Linear Systems**
 
