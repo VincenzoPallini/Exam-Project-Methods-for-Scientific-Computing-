@@ -1,42 +1,53 @@
-# Project 1: Analysis of the implementation of the Cholesky method in open source programming environments.
+This repository contains the projects developed for the Scientific Computing Methods exam (Metodi del Calcolo Scientifico) as part of the Master's Degree in Computer Science at the University of Milano-Bicocca (Academic Year 2022-2023). The work consists of two main parts, focusing on the practical application and comparative analysis of numerical methods in different programming environments.
 
-Il progetto di Metodi del Calcolo Scientifico ha l'obiettivo di analizzare l'implementazione di un solutore basato sul metodo di Cholesky per la risoluzione di sistemi lineari con matrici sparse, simmetriche e definite positive. Il fine ultimo è di confrontare le implementazioni in Matlab e Python in termini di tempo di esecuzione, accuratezza dei risultati, utilizzo della memoria, facilità d'uso e qualità della documentazione. Le matrici sparse, caratterizzate da un elevato numero di elementi nulli, consentono di ridurre i costi computazionali, rendendo il metodo di Cholesky particolarmente efficiente e adatto a questo tipo di problemi.
+### **Project 1: Analysis of Solvers for Sparse Symmetric Positive Definite Linear Systems**
 
-### Tecnologie Utilizzate
+* **Objective:** To evaluate and compare the performance of solvers for linear systems $Ax=b$, where $A$ is a large, sparse, symmetric, and positive-definite matrix. The analysis aimed to benchmark the proprietary environment MATLAB against the open-source environment Python (using the SciPy library).
+* **Methodology:**
+    * Utilized matrices from the *SuiteSparse Matrix Collection*.
+    * Implemented scripts in MATLAB and Python to solve the linear systems using optimized sparse solvers (e.g., backslash operator `\` in MATLAB, `scipy.sparse.linalg.spsolve` in Python).
+    * Measured performance on both Windows and Linux operating systems, analyzing:
+        * Execution Time
+        * Memory Usage (profiled during solver execution)
+        * Accuracy (via relative error compared to a known exact solution).
+* **Technologies Used:**
+    * MATLAB (Utilizing built-in linear algebra and profiling tools)
+    * Python
+    * SciPy (for sparse linear algebra)
+    * NumPy (for numerical array manipulation)
+    * memory-profiler (for detailed memory usage analysis in Python)
+    * Pandas (for data handling and exporting results)
+    * Matplotlib (for data visualization)
+* **Key Findings & Outcomes:**
+    * Conducted a detailed comparative performance analysis across platforms. MATLAB demonstrated significantly faster execution times for the larger matrices tested.
+    * Python (SciPy) showed better computational performance on Linux compared to Windows for this specific task.
+    * Memory usage patterns differed between environments, analyzed in relation to matrix properties and solver behavior.
+    * Relative errors were generally very low, confirming solver accuracy, with minor differences observed between configurations.
+    * Analyzed the trade-offs between proprietary (MATLAB) and open-source (Python/SciPy) solutions, considering factors like license cost, computation time, and potential hardware scaling requirements for equivalent throughput. Linux emerged as a preferable OS environment.
 
-**Matlab:**
-- **Versione:** R2022a
-- **Funzionalità:** Matlab offre una vasta gamma di funzioni di algebra lineare, tra cui la fattorizzazione di Cholesky, senza la necessità di dipendenze aggiuntive. È utilizzato per la sua capacità di risolvere matrici sparse, simmetriche e definite positive in modo efficiente.
+### **Project 2: Grayscale Image Compression using Discrete Cosine Transform (DCT2)**
 
-**Python:**
-- **Versione:** 3.10
-- **Librerie:**
-  - **SciPy (1.9.0):** Impiegata per le sue avanzate funzioni di algebra lineare, in particolare `scipy.sparse` per la gestione delle matrici sparse e `scipy.sparse.linalg` per la risoluzione di sistemi lineari.
-  - **NumPy (1.22.4):** Fondamentale per la manipolazione di array multidimensionali e operazioni matematiche.
-  - **Memory Profiler (0.61.0):** Utilizzata per l'analisi dettagliata dell'uso della memoria.
-  - **Pandas (1.4.3):** Essenziale per la gestione e l'analisi dei dati.
-  - **Matplotlib (3.5.1):** Utilizzata per la visualizzazione dei dati e la creazione di grafici.
+* **Objective:** To implement and study a grayscale image compression algorithm based on the 2D Discrete Cosine Transform (DCT2) in an open-source environment. This involved comparing DCT implementations and developing a demonstrative application.
+* **Key Goals:**
+    1.  Implement a custom DCT2 function and compare its performance against the optimized library implementation (SciPy).
+    2.  Develop and analyze a block-based image compression algorithm inspired by JPEG (using DCT2 and frequency thresholding, without a quantization matrix).
+    3.  Create a graphical user interface (GUI) allowing users to load a grayscale BMP image, set compression parameters (block size `F`, frequency threshold `D`), and visualize the original vs. compressed image.
+* **Methodology:**
+    * Compared the execution time of a custom DCT2 (using `numpy.fft`) against `scipy.fftpack.dct`.
+    * Implemented the compression algorithm: dividing the image into FxF blocks, applying DCT2, zeroing out high-frequency coefficients where $i+j > D$, and reconstructing blocks using the Inverse DCT2 (IDCT). Handled image edges not perfectly divisible by F.
+    * Developed a user-friendly GUI application.
+* **Technologies Used:**
+    * Python
+    * NumPy (for array manipulation and custom DCT)
+    * SciPy (for optimized DCT/IDCT functions from `fftpack`)
+    * Pillow (PIL fork - for image loading and manipulation)
+    * Matplotlib (for image display and performance plotting)
+    * Pandas (for logging performance data)
+    * PySimpleGUI (for building the GUI)
+    * Git (for version control)
+* **Key Findings & Outcomes:**
+    * Verified the significant performance advantage of using optimized library functions (SciPy) for transforms like DCT compared to the custom implementation.
+    * Analyzed the impact of compression parameters (block size F, threshold D) on image quality, finding that smaller blocks and maintaining a D/F ratio above ~0.2 generally yielded better visual results.
+    * Successfully developed a functional GUI application demonstrating the image compression pipeline and allowing interactive parameter testing.
 
-Il progetto fornisce un'analisi dettagliata e un confronto tra le soluzioni implementate in Matlab e Python, valutando le prestazioni su diverse piattaforme operative, utilizzando matrici reali provenienti dalla SuiteSparse Matrix Collection. Questo lavoro offre una panoramica approfondita delle capacità e delle limitazioni delle diverse tecnologie di calcolo scientifico, giustificando l'utilizzo di ambienti open source rispetto a quelli proprietari.
-
-# Project 2: Compression of gray tone images using the Discrete Cosine Transform (DCT2) in an open source environment.
-
-Questo progetto esamina la compressione di immagini in toni di grigio utilizzando la Trasformata Discreta del Coseno bidimensionale (DCT2) in un ambiente open source. Il lavoro si articola in due componenti principali: un'analisi comparativa delle prestazioni della DCT2 e lo sviluppo di un algoritmo di compressione basato su DCT2, simile a JPEG ma senza l'uso di una matrice di quantizzazione.
-
-## Obiettivi
-1. Implementare una versione custom della DCT2 e confrontarne le prestazioni con l'implementazione della libreria dell'ambiente utilizzato (SciPy).
-2. Condurre un'analisi comparativa dei tempi di esecuzione su array quadrati di dimensione N x N, variando N.
-3. Sviluppare e analizzare un algoritmo di compressione di immagini ispirato a JPEG, utilizzando la DCT2 senza matrice di quantizzazione.
-4. Creare un'interfaccia utente che permetta la selezione di un'immagine in formato .bmp in toni di grigio, l'inserimento dei parametri F e d, e la visualizzazione dell'immagine originale e compressa per confronto.
-
-## Tecnologie Utilizzate
-- **Linguaggio di Programmazione**: Python
-- **Librerie Scientifiche**: NumPy, SciPy
-- **Analisi dei Dati**: Pandas
-- **Visualizzazione**: Matplotlib
-- **Elaborazione Immagini**: PIL (Python Imaging Library)
-- **Interfaccia Utente**: PySimpleGUI
-- **Controllo Versione**: Git
-
-
-
+---
