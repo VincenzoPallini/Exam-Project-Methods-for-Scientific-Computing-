@@ -1,5 +1,3 @@
-This repository contains projects developed for the Scientific Computing Methods (Metodi del Calcolo Scientifico) exam as part of the Master's Degree in Computer Science at the University of Milano-Bicocca (Academic Year 2022-2023). The work consists of two main parts, focusing on the practical application and comparative analysis of numerical methods in different programming environments.
-
 ## Repository Content
 
 * **Project 1**: Comparative performance analysis of MATLAB and Python/SciPy in solving sparse, symmetric, and positive-definite linear systems.
